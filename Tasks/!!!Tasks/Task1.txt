@@ -1,0 +1,5 @@
+1.Write a program that converts Celsius to Fahrenheit.
+2.Write a program that calculates the area of a circle given its radius.
+3.Write a program that converts kilometers per hour to meters per second, given the speed in kilometers per hour.
+4.Write a program that converts some amount of money from USD to BYN, the amount and ratio are given.
+5.Write a program that generates a random number between in a given range, and shows the answer to a user.
