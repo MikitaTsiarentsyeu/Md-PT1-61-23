@@ -15,7 +15,7 @@ print('area of circle equal', area_of_circle);
 
 #3
 km_pr_hr = 120;
-mt_pr_sc = round(km_pr_hr * (1000/3600))
+mt_pr_sc = round(km_pr_hr * (1000/3600));
 print(mt_pr_sc, 'meters per second');
 
 #4
