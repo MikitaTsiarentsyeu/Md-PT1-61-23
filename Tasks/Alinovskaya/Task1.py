@@ -35,9 +35,9 @@ import datetime as DT;
 
 
 #6
-user = input("Enter your birthday in format: yyyymmdd");
+user = input("Enter your birthday in format: yyyy.mm.dd");
 
-first_date = DT.datetime.strptime(user, '%Y%m%d').date();
+first_date = DT.datetime.strptime(user, '%Y.%m.%d').date();
 
 current_date = datetime.now();
 second_date= current_date.date();
