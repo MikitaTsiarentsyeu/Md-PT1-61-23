@@ -126,7 +126,7 @@ class СonvertingTime:
                     print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
                           f"{self.dictionary_3[self.minute % 10]} "
                           f"минут {self.dictionary_2[self.hour + 1]}")
-
+        # min >= 45 без min такого-то (08:54 - без шести минут девять)
         elif self.minute >= 45:
             if self.hour > 12:
                 print(
@@ -134,7 +134,7 @@ class СonvertingTime:
                     f"минут {self.dictionary_2[self.hour + 1 - 12]}")
             else:
                 print(
-                    f"{self.digital_time_input}- без {self.dictionary_4[60 - self.minute]} "
+                    f"{self.digital_time_input} - без {self.dictionary_4[60 - self.minute]} "
                     f"минут {self.dictionary_2[self.hour + 1]}")
         else:
             print("Что-то пошло не так!")
