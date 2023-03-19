@@ -30,20 +30,19 @@ class СonvertingTime:
 
     def input_time_find_hour_and_minute(self):
         self.digital_time_input = str(input("Введите время в формате hh:mm.\n Пример, 16:00 \n \t")).strip()
-        #self.digital_time_input = "12:58"
-        #print(self.digital_time_input)
+        # self.digital_time_input = "12:58"
+        # print(self.digital_time_input)
         self.data_time = dt.datetime.strptime(self.digital_time_input, "%H:%M")
         self.hour = int(self.data_time.hour)
         self.minute = int(self.data_time.minute)
         # print(self.minute)
         # print(self.hour)
 
-
     def logic_of_actions(self):
         self.input_time_find_hour_and_minute()
-        #print(self.minute)
-        #print(self.hour)
-        #print(self.dictionary_1)
+        # print(self.minute)
+        # print(self.hour)
+        # print(self.dictionary_1)
         # min == 0: такое-то значение часа ровно (15:00 - три часа ровно)
         if self.minute == 0:
             if self.hour == 1 or self.hour == 13:
@@ -70,30 +69,30 @@ class СonvertingTime:
         # min < 30: столько-то минут следующего часа (19:12 - двенадцать минут восьмого)
         elif self.minute < 30:
             if self.hour > 12:
-                if self.minute in [1,21]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]} "
+                if self.minute in [1, 21]:
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]} "
                           f"минута {self.dictionary_2[self.hour + 1 - 12]}")
-                elif self.minute in [2,3,4,22,23,24]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]}  "
+                elif self.minute in [2, 3, 4, 22, 23, 24]:
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]}  "
                           f"минуты {self.dictionary_2[self.hour + 1 - 12]}")
                 else:
                     print(f"{self.digital_time_input} - {self.dictionary_3[self.minute]} "
-                      f"минут {self.dictionary_2[self.hour + 1 - 12]}")
+                          f"минут {self.dictionary_2[self.hour + 1 - 12]}")
             else:
                 if self.minute in [1, 21]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]}  "
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]}  "
                           f"минута {self.dictionary_2[self.hour + 1]}")
                 elif self.minute in [2, 3, 4, 22, 23, 24]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]}  "
-                          f"минуты {self.dictionary_2[self.hour + 1 ]}")
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]}  "
+                          f"минуты {self.dictionary_2[self.hour + 1]}")
                 else:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]} "
-                          f"минут {self.dictionary_2[self.hour + 1 ]}")
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]} "
+                          f"минут {self.dictionary_2[self.hour + 1]}")
         # min == 30: половина такого-то (15:30 - половина четвёртого)
         elif self.minute == 30:
             if self.hour > 12:
@@ -103,36 +102,40 @@ class СonvertingTime:
 
         elif self.minute > 30 and self.minute < 45:
             if self.hour > 12:
-                if self.minute in [1,21]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]} "
+                if self.minute in [1, 21]:
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]} "
                           f"минута {self.dictionary_2[self.hour + 1 - 12]}")
-                elif self.minute in [2,3,4,22,23,24]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]}  "
+                elif self.minute in [2, 3, 4, 22, 23, 24]:
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]}  "
                           f"минуты {self.dictionary_2[self.hour + 1 - 12]}")
                 else:
                     print(f"{self.digital_time_input} - {self.dictionary_3[self.minute]} "
-                      f"минут {self.dictionary_2[self.hour + 1 - 12]}")
+                          f"минут {self.dictionary_2[self.hour + 1 - 12]}")
             else:
                 if self.minute in [1, 21]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]}  "
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]}  "
                           f"минута {self.dictionary_2[self.hour + 1]}")
                 elif self.minute in [2, 3, 4, 22, 23, 24]:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]}  "
-                          f"минуты {self.dictionary_2[self.hour + 1 ]}")
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]}  "
+                          f"минуты {self.dictionary_2[self.hour + 1]}")
                 else:
-                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute%10]} "
-                          f"{self.dictionary_3[self.minute%10]} "
-                          f"минут {self.dictionary_2[self.hour + 1 ]}")
+                    print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                          f"{self.dictionary_3[self.minute % 10]} "
+                          f"минут {self.dictionary_2[self.hour + 1]}")
 
         elif self.minute >= 45:
             if self.hour > 12:
-                print(f"{self.digital_time_input} - без {self.dictionary_4[60 - self.minute]} минут {self.dictionary_2[self.hour + 1 -12]}")
+                print(
+                    f"{self.digital_time_input} - без {self.dictionary_4[60 - self.minute]} "
+                    f"минут {self.dictionary_2[self.hour + 1 - 12]}")
             else:
-                print(f"{self.digital_time_input}- без {self.dictionary_4[60 - self.minute]} минут {self.dictionary_2[self.hour + 1]}")
+                print(
+                    f"{self.digital_time_input}- без {self.dictionary_4[60 - self.minute]} "
+                    f"минут {self.dictionary_2[self.hour + 1]}")
         else:
             print("Что-то пошло не так!")
             exit()
@@ -141,6 +144,6 @@ class СonvertingTime:
         self.logic_of_actions()
 
 
-#Without checking invalid values
+# Without checking invalid values
 x = СonvertingTime()
 x.start()
