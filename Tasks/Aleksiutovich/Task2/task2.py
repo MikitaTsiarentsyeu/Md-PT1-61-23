@@ -30,6 +30,7 @@ class СonvertingTime:
                              6: "шести", 5: "пяти", 4: "четырех", 3: "трех", 2: "двух", 1: "одной"}
         self.list = [2, 3, 4, 22, 23, 24, 32, 33, 34, 42 ,43, 44]
         self.list_2 = [1, 21, 31, 41]
+        self.list_3 = [2, 3, 4, 14, 15, 16]
 
     def input_time_find_hour_and_minute(self):
         self.digital_time_input = str(input("Введите время в формате hh:mm.\n Пример, 16:00 \n \t")).strip()
@@ -55,7 +56,7 @@ class СonvertingTime:
                 else:
                     print(f"{self.digital_time_input} - "
                           f"{self.dictionary_1[self.hour].lower()} час ровно")
-            elif self.hour in [2, 3, 4, 14, 15, 16]:
+            elif self.hour in  self.list_3:
                 if self.hour > 12:
                     print(f"{self.digital_time_input} - "
                           f"{self.dictionary_1[self.hour - 12].lower()} часа ровно")
@@ -72,7 +73,7 @@ class СonvertingTime:
         # min < 30: столько-то минут следующего часа (19:12 - двенадцать минут восьмого)
         elif self.minute < 30:
             if self.hour > 12:
-                if self.minute in [1, 21]:
+                if self.minute in self.list_2:
                     print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
                           f"{self.dictionary_3[self.minute % 10]} "
                           f"минута {self.dictionary_2[self.hour + 1 - 12]}")
@@ -84,7 +85,7 @@ class СonvertingTime:
                     print(f"{self.digital_time_input} - {self.dictionary_3[self.minute]} "
                           f"минут {self.dictionary_2[self.hour + 1 - 12]}")
             else:
-                if self.minute in [1, 21]:
+                if self.minute in self.list_2:
                     print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
                           f"{self.dictionary_3[self.minute % 10]}  "
                           f"минута {self.dictionary_2[self.hour + 1]}")
