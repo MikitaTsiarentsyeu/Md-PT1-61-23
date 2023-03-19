@@ -150,4 +150,11 @@ class СonvertingTime:
 
 # Without checking invalid values
 x = СonvertingTime()
-x.start()
+#x.start()
+try:
+    x.start()
+except ValueError:
+    print("Ошибка")
+    print("_______"*4)
+    print("Были введены некоректные данные")
+
