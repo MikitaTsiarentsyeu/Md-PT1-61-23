@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import datetime as dt
 
 '''without checking for the correctness of the input'''
