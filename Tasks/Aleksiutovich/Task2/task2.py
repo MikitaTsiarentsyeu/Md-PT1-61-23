@@ -128,14 +128,6 @@ class СonvertingTime:
     def start(self):
         self.logic_of_actions()
 
-
-# x = СonvertingTime()
-# try:
-#     x.start()
-# except ValueError:
-#     print("Ошибка")
-#     print("_______" * 4)
-#     print("Были введены некоректные данные")
 def conver_time():
     x = СonvertingTime()
     try:
