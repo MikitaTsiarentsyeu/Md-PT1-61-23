@@ -54,7 +54,7 @@ class СonvertingTime:
         else:
             if self.minute in self.list_2:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
-                      f"{self.dictionary_3[self.minute % 10]}  "
+                      f"{self.dictionary_3[self.minute % 10]} "
                       f"минута {self.dictionary_2[self.hour + 1]}")
             elif self.minute in self.list_4:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute]} "
@@ -129,10 +129,22 @@ class СonvertingTime:
         self.logic_of_actions()
 
 
-x = СonvertingTime()
-try:
-    x.start()
-except ValueError:
-    print("Ошибка")
-    print("_______" * 4)
-    print("Были введены некоректные данные")
+# x = СonvertingTime()
+# try:
+#     x.start()
+# except ValueError:
+#     print("Ошибка")
+#     print("_______" * 4)
+#     print("Были введены некоректные данные")
+def conver_time():
+    x = СonvertingTime()
+    try:
+        x.start()
+    except KeyError:
+        print("00:00 - полночь")
+    except ValueError:
+        print("Ошибка")
+        print("_______" * 4)
+        print("Были введены некоректные данные")
+
+conver_time()
