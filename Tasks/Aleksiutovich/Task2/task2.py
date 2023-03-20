@@ -3,6 +3,7 @@ import datetime as dt
 
 '''without checking for the correctness of the input'''
 
+
 # Implement a text output of the time entered from the console (the user should input data in the format hh:mm).
 #
 # Show the responses to the user in Russian according to the rules listed below:
@@ -21,9 +22,10 @@ class СonvertingTime:
         self.dictionary_4 = {15: "пятнадцати", 14: "четырнадцати", 13: "тринадцати", 12: "двенадцати",
                              11: "одинадцати", 10: "десяти", 9: "девяти", 8: "восьми", 7: "семи",
                              6: "шести", 5: "пяти", 4: "четырех", 3: "трех", 2: "двух", 1: "одной"}
-        self.list = [2, 3, 4, 22, 23, 24, 32, 33, 34, 42 ,43, 44]
-        self.list_2 = [1, 21, 31, 41]
-        self.list_3 = [2, 3, 4, 14, 15, 16]
+        self.list = (2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44)
+        self.list_2 = (1, 21, 31, 41)
+        self.list_3 = (2, 3, 4, 14, 15, 16)
+        self.list_4 = (11, 12, 13, 14, 15, 16, 17, 18, 19)
 
     def input_time_find_hour_and_minute(self):
         self.digital_time_input = str(input("Введите время в формате hh:mm.\n Пример, 16:00 \n \t")).strip()
@@ -31,12 +33,16 @@ class СonvertingTime:
         self.data_time = dt.datetime.strptime(self.digital_time_input, "%H:%M")
         self.hour = int(self.data_time.hour)
         self.minute = int(self.data_time.minute)
+
     def modul_1(self):
         if self.hour > 12:
             if self.minute in self.list_2:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
                       f"{self.dictionary_3[self.minute % 10]} "
                       f"минута {self.dictionary_2[self.hour + 1 - 12]}")
+            elif self.minute in self.list_4:
+                print(f"{self.digital_time_input} - {self.dictionary_3[self.minute]} "
+                      f"минут {self.dictionary_2[self.hour + 1 - 12]}")
             elif self.minute in self.list:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
                       f"{self.dictionary_3[self.minute % 10]} "
@@ -50,14 +56,18 @@ class СonvertingTime:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
                       f"{self.dictionary_3[self.minute % 10]}  "
                       f"минута {self.dictionary_2[self.hour + 1]}")
+            elif self.minute in self.list_4:
+                print(f"{self.digital_time_input} - {self.dictionary_3[self.minute]} "
+                      f"минут {self.dictionary_2[self.hour + 1]}")
             elif self.minute in self.list:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
-                      f"{self.dictionary_3[self.minute % 10]}  "
+                      f"{self.dictionary_3[self.minute % 10]} "
                       f"минуты {self.dictionary_2[self.hour + 1]}")
             else:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
                       f"{self.dictionary_3[self.minute % 10]} "
                       f"минут {self.dictionary_2[self.hour + 1]}")
+
     def modul_2(self):
         if self.hour == 1 or self.hour == 13:
             if self.hour > 12:
@@ -118,12 +128,11 @@ class СonvertingTime:
     def start(self):
         self.logic_of_actions()
 
+
 x = СonvertingTime()
 try:
     x.start()
 except ValueError:
     print("Ошибка")
-    print("_______"*4)
+    print("_______" * 4)
     print("Были введены некоректные данные")
-
-
