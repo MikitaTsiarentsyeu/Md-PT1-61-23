@@ -39,10 +39,11 @@ class СonvertingTime:
                       f"минута {self.dictionary_2[self.hour + 1 - 12]}")
             elif self.minute in self.list:
                 print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
-                      f"{self.dictionary_3[self.minute % 10]}  "
+                      f"{self.dictionary_3[self.minute % 10]} "
                       f"минуты {self.dictionary_2[self.hour + 1 - 12]}")
             else:
-                print(f"{self.digital_time_input} - {self.dictionary_3[self.minute]} "
+                print(f"{self.digital_time_input} - {self.dictionary_3[self.minute - self.minute % 10]} "
+                      f"{self.dictionary_3[self.minute % 10]} "
                       f"минут {self.dictionary_2[self.hour + 1 - 12]}")
         else:
             if self.minute in self.list_2:
