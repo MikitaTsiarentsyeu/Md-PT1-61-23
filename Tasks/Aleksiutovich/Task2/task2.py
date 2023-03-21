@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import datetime as dt
 
-'''without checking for the correctness of the input'''
-
 
 # Implement a text output of the time entered from the console (the user should input data in the format hh:mm).
 #
@@ -141,6 +139,7 @@ class СonvertingTime:
     def start(self):
         self.logic_of_actions()
 
+
 def conver_time():
     x = СonvertingTime()
     try:
@@ -151,5 +150,6 @@ def conver_time():
         print("Ошибка")
         print("_______" * 4)
         print("Были введены некоректные данные")
+
 
 conver_time()
