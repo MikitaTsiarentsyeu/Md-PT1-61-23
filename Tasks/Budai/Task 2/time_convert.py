@@ -33,27 +33,30 @@ minutes_dict = {1: ('Одна минута', 'Без одной минуты'), 
 
 time = input('Enter the time (hh:mm): ')
 
-if ':' in time:
+if ':' in time and time.count(':') == 1:
     time_values = time.split(':')
-    hours = int(time_values[0])
-    minutes = int(time_values[1])
+    if time_values[0].isdigit() and time_values[1].isdigit():
+        hours = int(time_values[0])
+        minutes = int(time_values[1])
 
-    if hours > 24 or hours < 0 or minutes > 60 or minutes < 0:
-        print('Wrong input! Hours should be 0-24, minutes should be 0-60.')
-        exit(1)
+        if hours > 24 or hours < 0 or minutes > 60 or minutes < 0:
+            print('Wrong input! Hours should be 0-24, minutes should be 0-60.')
+            exit(1)
 
-    if minutes == 0:
-        print(f'{hours}:00 - {hours_dict[hours][0]} ровно')
-    elif minutes <= 15:
-        print(f'{hours}:{minutes} - {minutes_dict[minutes][0]} {hours_dict[hours][1]}')
-    elif minutes <= 29:
-        print(f'{hours}:{minutes} - {minutes_dict[minutes]} {hours_dict[hours][1]}')
-    elif minutes == 30:
-        print(f'{hours}:{minutes} - Половина {hours_dict[hours][1]}')
-    elif minutes <= 45:
-        print(f'{hours}:{minutes} - {minutes_dict[minutes]} {hours_dict[hours][1]}')
+        if minutes == 0:
+            print(f'{hours}:00 - {hours_dict[hours][0]} ровно')
+        elif minutes <= 15:
+            print(f'{hours}:{minutes} - {minutes_dict[minutes][0]} {hours_dict[hours][1]}')
+        elif minutes <= 29:
+            print(f'{hours}:{minutes} - {minutes_dict[minutes]} {hours_dict[hours][1]}')
+        elif minutes == 30:
+            print(f'{hours}:{minutes} - Половина {hours_dict[hours][1]}')
+        elif minutes <= 45:
+            print(f'{hours}:{minutes} - {minutes_dict[minutes]} {hours_dict[hours][1]}')
+        else:
+            minutes_left = 60 - minutes
+            print(f'{hours}:{minutes} - {minutes_dict[minutes_left][1]} {hours_dict[hours][2]}')
     else:
-        minutes_left = 60 - minutes
-        print(f'{hours}:{minutes} - {minutes_dict[minutes_left][1]} {hours_dict[hours][2]}')
+        print('Wrong input!')
 else:
     print('Wrong input!')
