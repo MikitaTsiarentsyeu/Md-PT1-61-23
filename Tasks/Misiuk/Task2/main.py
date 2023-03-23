@@ -3,9 +3,9 @@ time = {1: ['один', 'первого'], 2: ['два', 'второго'], 3: [
 
 input_time = input("Enter the time hh:mm \n")
 input_time = input_time.split(':')
-if int(input_time[0]) < 10:
+if len(input_time[0]) < 2:
     input_time[0] = '0' + input_time[0]
-if int(input_time[1]) < 10:
+if len(input_time[1]) < 2:
     input_time[1] = '0' + input_time[1]
 
 hour = int(input_time[0])
