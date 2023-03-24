@@ -17,7 +17,7 @@ d = {0:[[], ["ноль", "первого", "час"]], 1:[["одна"], ["оди
 time = input("Введите время в формате hh:mm: \n")
 time = time.replace(" ", "").replace(".",":").replace(",",":")
 
-check = '^(([0,1][0-9])|(2[0-3])):[0-5][0-9]$'
+check = '^([0-9]|([0,1][0-9])|(2[0-3])):[0-9]|[0-5][0-9]$'
 if re.match(check, time) is None:
     print("Время указано не правильно")
     exit()
@@ -34,7 +34,12 @@ hour = d[hh]
 min = d[mm]
 
 if mm == 0:
-    time_text = f"{hour[1][0]} ровно"   
+    if hh == 1:
+        time_text = f"{hour[1][0]} час ровно"  
+    elif hh >= 2 and hh <= 4:
+        time_text = f"{hour[1][0]} часа ровно"  
+    else:
+        time_text = f"{hour[1][0]} часов ровно"  
 elif mm < 30: 
     if mm == 1 or mm == 21:
         time_text = f"{min[0][0]} минута {hour[1][1]}"
