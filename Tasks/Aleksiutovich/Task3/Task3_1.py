@@ -1,5 +1,5 @@
 # Write a program that takes a string as input from a user and returns the number of vowels in the string.
-# user_input = input("Enter your text: \n")
+#user_input = input("Enter your text: \n")
 # user_input = "Test is test. the test a test"
 count = 0
 vowels = "aeiouy"
