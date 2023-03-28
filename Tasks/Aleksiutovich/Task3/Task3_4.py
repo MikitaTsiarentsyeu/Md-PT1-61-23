@@ -1,6 +1,7 @@
 # Write a program that takes a list of numbers as input and returns the second largest number in the list.
 input_user = input("Enter numbers seperated by a space \n > ")
 input_user = [int(numbers) for numbers in input_user.split()]
+#input_user = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 print("Converted a string to a list")
 print(input_user)
 if len(input_user) == 1:
