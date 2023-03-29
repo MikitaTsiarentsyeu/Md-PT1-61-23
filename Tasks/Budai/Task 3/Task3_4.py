@@ -2,7 +2,7 @@ from input_numbers import input_list_of_numbers
 
 
 def find_max_number(nums):
-    max_number = 0
+    max_number = nums[0]
     for n in nums:
         if n > max_number:
             max_number = n
