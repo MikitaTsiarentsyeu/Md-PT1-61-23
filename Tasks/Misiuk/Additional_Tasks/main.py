@@ -1,18 +1,21 @@
 import os
-list_file = os.listdir(path='.')
-dict_output = {}
+list_file = [x for x in os.listdir('.') if x.endswith(('.txt'))]
 
-if len(list_file) != 1:
+dict_output = {}
+signs = [',', '.', '!', '?', ':', ';', '"',
+         "'", '#', '%', '@', '$', '^', '*', '<', '>']
+
+if list_file:
     for name in list_file:
-        if name[-3::] == 'txt':
-            with open(name, 'r') as file:
-                for item in file:
-                    content = item.lower().replace(',', '').replace('.', '').replace('?', '').split()
-                    for word in content:
-                        if word in dict_output:
-                            dict_output[word] += 1
-                        else:
-                            dict_output[word] = 1
+        with open(name, 'r') as file:
+            for item in file:
+                for i in signs:
+                    item = item.lower().replace(i, ' ')
+                for word in item.split():
+                    if word in dict_output:
+                        dict_output[word] += 1
+                    else:
+                        dict_output[word] = 1
     for key, elem in dict_output.items():
         print(f'Слова найденные в файлах "{key}" - количество {elem}')
 else:
