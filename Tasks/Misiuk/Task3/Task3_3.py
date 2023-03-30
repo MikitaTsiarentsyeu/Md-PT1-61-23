@@ -1,8 +1,13 @@
-input_string = input('Enter your string: ').lower().replace(
-    ',', ' ').replace('.', ' ').split()
-
+input_string = input('Enter your string: ').lower()
 str_dict = {}
-for word in input_string:
+
+signs = [',', '.', '!', '?', ':', ';', '"',
+         "'", '#', '%', '@', '$', '^', '*', '<', '>']
+
+
+for i in signs:
+    input_string = input_string.replace(i, ' ')
+for word in input_string.split():
     if word in str_dict:
         str_dict[word] += 1
     else:
