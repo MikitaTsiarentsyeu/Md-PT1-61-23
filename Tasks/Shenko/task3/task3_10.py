@@ -15,5 +15,4 @@ for i in num:
             continue
         else:
             list.append(i)
-list = sorted(list)
-print (list[-1])
+print (max(list))
