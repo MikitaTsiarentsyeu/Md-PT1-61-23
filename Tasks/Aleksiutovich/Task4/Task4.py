@@ -3,11 +3,12 @@
 def format_text(file):
     max_num_lines = int(input("""Enter the maximum number of characters per line.
 The number must be greater than 35.
-\\>"""))
+\\> """))
 
     if max_num_lines < 35:
         print("Attention!!!A value of at least 35 is accepted!")
         print("Error! Repeat the input!")
+        exit()
 
     else:
         # max_num_lines = 40
@@ -17,8 +18,8 @@ The number must be greater than 35.
                 lists.append(line.split())
         lines = []
         current_line = ''
-        for list in lists:
-            for word in list:
+        for list_ in lists:
+            for word in list_:
                 if len(current_line) + len(word) + 1 <= max_num_lines:
                     current_line += word + ' '
                 else:
