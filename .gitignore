@@ -130,6 +130,7 @@ dmypy.json
 
 
 .DS_Store
+Tasks/Aleksiutovich/.idea/
 Tasks/Aleksiutovich/.idea/workspace.xml
 Tasks/Aleksiutovich/.idea/inspectionProfiles/profiles_settings.xml
 Tasks/Aleksiutovich/.idea/Aleksiutovich.iml
@@ -137,3 +138,4 @@ Tasks/Aleksiutovich/.idea/misc.xml
 Tasks/Aleksiutovich/.idea/modules.xml
 Tasks/Aleksiutovich/.idea/vcs.xml
 Tasks/Aleksiutovich/.idea/.name
+*.txt
