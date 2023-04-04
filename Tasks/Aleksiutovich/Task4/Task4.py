@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 
 def format_text(file):
-    max_num_lines = int(input("Введите максимальное количество символов в строке  \n >"))
+    max_num_lines = int(input("""Enter the maximum number of characters per line.
+The number must be greater than 35.
+\\>"""))
 
     if max_num_lines < 35:
-        print("Внимание!!!Принимается значение не менее 35!")
-        print("Повторите ввод!")
+        print("Attention!!!A value of at least 35 is accepted!")
+        print("Error! Repeat the input!")
 
     else:
-# max_num_lines = 40
+        # max_num_lines = 40
         lists = []
         with open(file) as f:
             for line in f:
@@ -26,7 +28,8 @@ def format_text(file):
             current_line = ''
         with open('format_file.txt', 'w') as new_f:
             new_f.write('\n'.join(lines))
-            print("Файл создан и удачно записан!")
+            print("The file has been created and successfully recorded!")
+
 
 text = 'text.txt'
 format_text(text)
