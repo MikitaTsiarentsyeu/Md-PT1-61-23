@@ -48,7 +48,7 @@ The number must be greater than 35.
                     lines.append(current_line)
                     current_line = [word]
             # Добавляем текущую строку в список строк
-            print(lines)
+            # print(lines)
             lines.append(current_line)
             # Обнуляем текущую строку
             current_line = []
