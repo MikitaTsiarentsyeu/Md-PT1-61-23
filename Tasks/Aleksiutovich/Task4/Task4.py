@@ -80,35 +80,37 @@ The number must be greater than 35.
         new_lines = []
         # Обходим все строки
         for line in lines:
-            #
-            new_lines.append(align_to_width_str(line, max_num_lines).rstrip())
-            # # Если длина строки равна максимальной длине,
-            # # то сохраняем ее как есть
-            # if len(' '.join(line)) == max_num_lines:
-            #     new_lines.append(' '.join(line))
-            # # Если длина строки меньше максимальной длины,
-            # # добавляем пробелы между словами,
-            # # чтобы длина строки стала равна максимальной длине
-            # elif len(' '.join(line)) < max_num_lines:
-            #     num_spaces = max_num_lines - len(''.join(line)) + 1
-            #     # space_counts количество пробелов
-            #     space_counts = [1] * len(line)
-            #     # Увеличиваем значение индексов,
-            #     # пока сумма space_counts не сравнится с num_spaces
-            #     while sum(space_counts) < num_spaces:
-            #         for i in range(len(space_counts)):
-            #             space_counts[i] += 1
-            #             if sum(space_counts) == num_spaces:
-            #                 break
-            #
-            #     new_line = ''
-            #     # Обьединяем текущее слово с количеством пробелов,
-            #     # и добавляем все это в new_line.
-            #     for word, space_count in zip(line, space_counts):
-            #         new_line += word + ' ' * space_count
-            #
-            #     # Удаляем все конечные пробелы и добавляем к списку
-            #     new_lines.append(new_line.rstrip())
+            #Далее код писал на основе найденной функции в сети align_to_width_str(line, width)
+            #Ее реалиазацию можно посмотреть раскоментив строку кода внизу
+            #new_lines.append(align_to_width_str(line, max_num_lines).rstrip())
+
+            # Если длина строки равна максимальной длине,
+            # то сохраняем ее как есть
+            if len(' '.join(line)) == max_num_lines:
+                new_lines.append(' '.join(line))
+            # Если длина строки меньше максимальной длины,
+            # добавляем пробелы между словами,
+            # чтобы длина строки стала равна максимальной длине
+            elif len(' '.join(line)) < max_num_lines:
+                num_spaces = max_num_lines - len(''.join(line)) + 1
+                # space_counts количество пробелов
+                space_counts = [1] * len(line)
+                # Увеличиваем значение индексов,
+                # пока сумма space_counts не сравнится с num_spaces
+                while sum(space_counts) < num_spaces:
+                    for i in range(len(space_counts)):
+                        space_counts[i] += 1
+                        if sum(space_counts) == num_spaces:
+                            break
+
+                new_line = ''
+                # Обьединяем текущее слово с количеством пробелов,
+                # и добавляем все это в new_line.
+                for word, space_count in zip(line, space_counts):
+                    new_line += word + ' ' * space_count
+
+                # Удаляем все конечные пробелы и добавляем к списку
+                new_lines.append(new_line.rstrip())
 
         # Создаем новый файл с отформатированными строками и закрываем его
         with open('formated_file.txt', 'w') as new_f:
