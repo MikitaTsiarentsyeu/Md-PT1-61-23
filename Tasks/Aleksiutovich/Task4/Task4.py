@@ -50,7 +50,7 @@ The number must be greater than 35.
             # Добавляем текущую строку в список строк
             # print(lines)
             lines.append(current_line)
-        
+
             # Обнуляем текущую строку
             current_line = []
         # Создаем список для хранения окончательно отформатированных строк
