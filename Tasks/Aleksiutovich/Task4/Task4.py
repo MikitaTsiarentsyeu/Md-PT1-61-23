@@ -11,7 +11,7 @@ def format_text(file):
     # Запрос максимальной длины строки
     max_num_lines = int(input("""Enter the maximum number of characters per line.
 The number must be greater than 35.
-\\> """))
+\\>>> """))
 
     # Проверка правильности ввода максимальной длины
     if max_num_lines < 35:
@@ -50,6 +50,7 @@ The number must be greater than 35.
             # Добавляем текущую строку в список строк
             # print(lines)
             lines.append(current_line)
+        
             # Обнуляем текущую строку
             current_line = []
         # Создаем список для хранения окончательно отформатированных строк
@@ -84,7 +85,7 @@ The number must be greater than 35.
                 new_lines.append(new_line.rstrip())
 
         # Создаем новый файл с отформатированными строками и закрываем его
-        with open('format_file.txt', 'w') as new_f:
+        with open('formated_file.txt', 'w') as new_f:
             new_f.write('\n'.join(new_lines))
         # Оповещаем  об этом пользователя
         print("The file has been created and successfully recorded.")
