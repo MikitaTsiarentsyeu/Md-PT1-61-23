@@ -81,7 +81,7 @@ The number must be greater than 35.
                 # и добавляем все это в new_line.
                 for word, space_count in zip(line, space_counts):
                     new_line += word + ' ' * space_count
-               
+
                 # Удаляем все конечные пробелы и добавляем к списку
                 new_lines.append(new_line.rstrip())
 
