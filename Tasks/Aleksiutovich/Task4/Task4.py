@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 def format_text(file):
     """
     This function opens a text file, formats it according
@@ -35,7 +35,7 @@ The number must be greater than 35.
         for list_ in lists:
             # Обходим каждое слово в строке
             for word in list_:
-                if len(' '.join(current_line)) + len(word) +1 <= max_num_lines:
+                if len(' '.join(current_line)) + len(word) <= max_num_lines:
                     # Если длина текущей строки плюс длина
                     # следующего слова меньше максимальной длины строки,
                     # то добавляем это слово в текущую строку
@@ -81,6 +81,7 @@ The number must be greater than 35.
                 # и добавляем все это в new_line.
                 for word, space_count in zip(line, space_counts):
                     new_line += word + ' ' * space_count
+               
                 # Удаляем все конечные пробелы и добавляем к списку
                 new_lines.append(new_line.rstrip())
 
@@ -91,7 +92,6 @@ The number must be greater than 35.
         print("The file has been created and successfully recorded.")
 
 
-
 file_now = 'text.txt'
 format_text(file_now)
-
+#format_text_tw(file_now)
