@@ -35,7 +35,7 @@ The number must be greater than 35.
         for list_ in lists:
             # Обходим каждое слово в строке
             for word in list_:
-                if len(' '.join(current_line)) + len(word) + 1 <= max_num_lines:
+                if len(' '.join(current_line)) + len(word) +1 <= max_num_lines:
                     # Если длина текущей строки плюс длина
                     # следующего слова меньше максимальной длины строки,
                     # то добавляем это слово в текущую строку
@@ -64,7 +64,7 @@ The number must be greater than 35.
             # добавляем пробелы между словами,
             # чтобы длина строки стала равна максимальной длине
             elif len(' '.join(line)) < max_num_lines:
-                num_spaces = max_num_lines - len(''.join(line))
+                num_spaces = max_num_lines - len(''.join(line)) + 1
                 # space_counts количество пробелов
                 space_counts = [1] * len(line)
                 # Увеличиваем значение индексов,
