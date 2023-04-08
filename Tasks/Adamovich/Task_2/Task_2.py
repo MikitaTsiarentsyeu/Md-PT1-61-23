@@ -168,12 +168,3 @@ if m >= 45:
         h = h + 1
         h_print = d[h]
         print(f'без {m_print[2]} минут {h_print[0]}')
-
-
-
-
-
-
-
-
-
