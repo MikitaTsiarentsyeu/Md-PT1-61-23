@@ -9,5 +9,5 @@ def reverse_strs(list):
 #test
 test = [test_str(5) for x in range(5)]
 print(test)
-output = reverse_strs(test)
-print(output)
+result = reverse_strs(test)
+print(result)

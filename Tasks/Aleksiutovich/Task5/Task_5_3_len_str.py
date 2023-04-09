@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from Generetor_str import generate_random_string as test_str
-# Write a function that takes a list of strings as an argument and returns a new list with all the strings that have a length greater than 5.
+# Write a function that takes a list of strings as an argument and returns
+# a new list with all the strings that have a length greater than 5.
 def len_strs(list):
     try:
         return [string for string in list if len(string) > 5]
