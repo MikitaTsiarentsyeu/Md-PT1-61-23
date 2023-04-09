@@ -1,0 +1,84 @@
+[
+    {
+        "make": "Toyota",
+        "models": [
+            {
+                "name": "Camry",
+                "year": 2021,
+                "trim_levels": [
+                    {
+                        "name": "LE",
+                        "price": 24900
+                    },
+                    {
+                        "name": "SE",
+                        "price": 27650
+                    },
+                    {
+                        "name": "XSE",
+                        "price": 30980
+                    }
+                ]
+            },
+            {
+                "name": "Corolla",
+                "year": 2022,
+                "trim_levels": [
+                    {
+                        "name": "LE",
+                        "price": 20600
+                    },
+                    {
+                        "name": "SE",
+                        "price": 22150
+                    },
+                    {
+                        "name": "XSE",
+                        "price": 25250
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "make": "Honda",
+        "models": [
+            {
+                "name": "Accord",
+                "year": 2021,
+                "trim_levels": [
+                    {
+                        "name": "LX",
+                        "price": 24970
+                    },
+                    {
+                        "name": "Sport",
+                        "price": 27380
+                    },
+                    {
+                        "name": "Touring",
+                        "price": 37170
+                    }
+                ]
+            },
+            {
+                "name": "Civic",
+                "year": 2022,
+                "trim_levels": [
+                    {
+                        "name": "LX",
+                        "price": 21400
+                    },
+                    {
+                        "name": "Sport",
+                        "price": 22500
+                    },
+                    {
+                        "name": "Touring",
+                        "price": 28750
+                    }
+                ]
+            }
+        ]
+    }
+]

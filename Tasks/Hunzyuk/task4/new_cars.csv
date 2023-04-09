@@ -1,0 +1,13 @@
+make,models,year,trim_level,price
+Toyota,Camry,2021,LE,24900
+Toyota,Camry,2021,SE,27650
+Toyota,Camry,2021,XSE,30980
+Toyota,Corolla,2022,LE,20600
+Toyota,Corolla,2022,SE,22150
+Toyota,Corolla,2022,XSE,25250
+Honda,Accord,2021,LX,24970
+Honda,Accord,2021,Sport,27380
+Honda,Accord,2021,Touring,37170
+Honda,Civic,2022,LX,21400
+Honda,Civic,2022,Sport,22500
+Honda,Civic,2022,Touring,28750
