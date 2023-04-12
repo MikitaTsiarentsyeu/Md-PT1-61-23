@@ -9,6 +9,7 @@ while True:
     else:
         print("Неверный тип данных")
 
+
 with open('Tasks/!!!Tasks/Task4/text.txt', 'r', encoding = 'utf-8') as f:
     content = f.read()
     new_text = ""
@@ -24,33 +25,30 @@ with open('Tasks/!!!Tasks/Task4/text.txt', 'r', encoding = 'utf-8') as f:
 
 with open('Tasks/Nikiforov/Task4/Task.txt', 'w', encoding = 'utf-8') as f:
     f.write(new_text)
-    print("Готово, проверь файл Task.txt")
 
-# Не получается с выравниванием, что я делаю не так?
+with open('Tasks/Nikiforov/Task4/Task.txt', 'r', encoding = 'utf-8') as f:
+    lines = f.readlines()
 
-# with open('Tasks/Nikiforov/Task4/Task.txt', 'r', encoding = 'utf-8') as f:
-#     lines = f.readlines()
-  
-# for i in range(len(lines)):
-#     if len(lines[i]) < UserLimit:
-#         words = lines[i].split()
-#         delta = UserLimit - len(lines[i].strip())
-#         gap = len(words) - 1
-#         if gap > 0:
-#             SpacesPerGap = delta // gap
-#             ExtraSpaces = delta % gap
-#             for j in range(gap):
-#                 words[j] += " " * SpacesPerGap
-#                 if ExtraSpaces > 0:
-#                     words[j] += " "
-#                     ExtraSpaces -= 1
-#         lines[i] = ' '.join(words)
+new_content = ""
+for line in lines:
+    line = line.rstrip()
+    line = line + "\n"
+    lack = UserLimit +1 - len(line)
+    AmountSpaces = line.count(" ")
+    if AmountSpaces == 0:
+        new_content += line
+        continue
+    proportion = lack // AmountSpaces
+    DecimalPart = lack % AmountSpaces
+    NewSpaces = " " * (proportion+1)
+    line = line.replace(" ", NewSpaces)
+    if DecimalPart > 0:
+        line = line.replace(NewSpaces, NewSpaces + " ", DecimalPart)
+    new_content += line
 
-# with open('Tasks/Nikiforov/Task4/Task.txt', 'w', encoding = 'utf-8') as f:
-#     lines = f.writelines(lines)
-
-
-
+with open('Tasks/Nikiforov/Task4/Task4.txt', 'w', encoding = 'utf-8') as f:
+    lines = f.writelines(new_content)
+    print("Готово, проверь файл Task4.txt")
 
 
 
