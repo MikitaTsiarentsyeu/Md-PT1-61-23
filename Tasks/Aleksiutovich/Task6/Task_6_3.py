@@ -13,5 +13,5 @@ def sum_elems(val_list):
 # test
 list_1 = ["a", 3, 4, 5, 6]
 list1 = [1, 3, 4, 5, 6]
-res = sum_elems(list1)
+res = sum_elems(list_1)
 print(res)
