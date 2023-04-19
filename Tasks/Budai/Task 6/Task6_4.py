@@ -1,5 +1,6 @@
 import time
 from functools import wraps
+import logging
 
 
 def decorator(func):
@@ -9,10 +10,11 @@ def decorator(func):
         return_value = func(*args, **kwargs)
         end = time.time()
         execution_time = end - start
-        with open('test1.txt', 'w') as file:
-            file.write(f'execution time: {execution_time}\n')
-            file.write(f'arguments: {args}, {kwargs}\n')
-            file.write(f'return value: {return_value}\n')
+        logging.basicConfig(level=logging.INFO, filename='py_log.log', filemode='w',
+                            format='%(asctime)s %(levelname)s %(message)s')
+        logging.info(f'The execution time is equal to {execution_time}')
+        logging.info(f'Arguments: {args}, {kwargs}')
+        logging.info(f'Return value: {return_value}')
     return wrapper
 
 
