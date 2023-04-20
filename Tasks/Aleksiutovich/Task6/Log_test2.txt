@@ -1,0 +1,10 @@
+Function: function2
+Arguments: ('This is string',) {}
+Return Value: This is the second function.
+Execution Time: 0.000000 seconds
+
+Function: function2
+Arguments: ('This is string',) {}
+Return Value: This is the second function.
+Execution Time: 0.000000 seconds
+
