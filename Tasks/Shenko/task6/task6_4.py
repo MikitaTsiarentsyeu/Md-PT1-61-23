@@ -22,4 +22,4 @@ def sum_num(x,y):
         return int(x)+int(y)
     except ValueError:
         print("Enter only numbers")
-(sum_num(x,y))
+sum_num(x,y)
