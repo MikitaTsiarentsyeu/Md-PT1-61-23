@@ -1,0 +1,3 @@
+Arguments: Andrew
+Return value: Andrew, your favorite car model is Tesla
+Excution time: 8.7801513671875 sec
