@@ -1,0 +1,3 @@
+ execution time: 0.0001049041748046875 seconds
+ arguments: 2, 3
+ return value: 5
