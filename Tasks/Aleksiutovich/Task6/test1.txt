@@ -1,0 +1,5 @@
+Function: function1
+Arguments: (5, 6) {}
+Return Value: This is the first function. A + B = 11
+Execution Time: 0.000000 seconds
+
