@@ -1,0 +1,34 @@
+{
+  "albums": [
+    {
+      "title": "Great depression",
+      "artist": "Markul",
+      "year": 2018,
+      "genre": "hip hop"
+    },
+    {
+      "title": "Sense of human",
+      "artist": "Markul",
+      "year": 2021,
+      "genre": "hip hop"
+    },
+    {
+      "title": "Tragic city",
+      "artist": "LSP",
+      "year": 2017,
+      "genre": "hip hop"
+    },
+    {
+      "title": "Philarmonia",
+      "artist": "Pharaoh",
+      "year": 2022,
+      "genre": "rap"
+    },
+    {
+      "title": "Astroworld",
+      "artist": "Travis Scott",
+      "year": 2018,
+      "genre": "hip hop"
+    }
+  ]
+}
