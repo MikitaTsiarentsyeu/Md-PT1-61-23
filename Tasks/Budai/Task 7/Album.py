@@ -1,18 +1,18 @@
 class Album:
     def __init__(self, title, artist, year, genre):
-        self.title = title
-        self.artist = artist
-        self.year = year
-        self.genre = genre
+        self.__title = title
+        self.__artist = artist
+        self.__year = year
+        self.__genre = genre
 
     def get_title(self):
-        return self.title
+        return self.__title
 
     def get_artist(self):
-        return self.artist
+        return self.__artist
 
     def get_year(self):
-        return self.year
+        return self.__year
 
     def get_genre(self):
-        return self.genre
+        return self.__genre
