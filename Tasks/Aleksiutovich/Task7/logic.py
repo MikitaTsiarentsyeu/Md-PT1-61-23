@@ -1,6 +1,8 @@
 import json
 
 
+
+
 class Collection:
     def __init__(self):
         self.items = []
@@ -56,4 +58,9 @@ class Collection:
 if __name__ == '__main__':
     col = Collection
     print(type(col))
+    import inspect
+
+    c = inspect.getmembers(col, predicate=inspect.ismethod)
+    print(type(c))
+
 

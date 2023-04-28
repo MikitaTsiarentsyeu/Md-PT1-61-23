@@ -2,6 +2,7 @@ import time
 from logic import Collection
 
 
+
 def main():
     collection = Collection()
     message = """MovieShelf is a movie library program that allows users 
@@ -34,7 +35,7 @@ makes it easy to keep track of your favorite films."""
             collection.list_items()
         elif choice == '3':
             print('1. Search by title.')
-            print('2. Search by artist/director.')
+            print('2. Search by director.')
             print('3. Search by year.')
             print('4. Search by genre.')
             search_choice = input('Enter your choice: ')
@@ -43,7 +44,7 @@ makes it easy to keep track of your favorite films."""
                 for item in collection.search_title(title):
                     print(item)
             elif search_choice == '2':
-                artist_director = input('Enter the artist or director: ')
+                artist_director = input('Enter the director: ')
                 for item in collection.search_artist_director(artist_director):
                     print(item)
             elif search_choice == '3':
