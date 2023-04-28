@@ -26,9 +26,9 @@ class Collection:
             if item['title'] == title:
                 yield item
 
-    def search_artist_director(self, director):
+    def director(self, director):
         for item in self.items:
-            if item['artist_director'] == director:
+            if item['director'] == director:
                 yield item
 
     def search_year(self, year):

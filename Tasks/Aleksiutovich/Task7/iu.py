@@ -44,8 +44,8 @@ makes it easy to keep track of your favorite films."""
                 for item in collection.search_title(title):
                     print(item)
             elif search_choice == '2':
-                artist_director = input('Enter the director: ')
-                for item in collection.search_artist_director(artist_director):
+                director = input('Enter the director: ')
+                for item in collection.search_director(director):
                     print(item)
             elif search_choice == '3':
                 year = int(input('Enter the year: '))
