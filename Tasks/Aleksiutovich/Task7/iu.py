@@ -59,12 +59,13 @@ makes it easy to keep track of your favorite films."""
                 print('You have entered an incorrect query')
 
         elif choice == '4':
-            print("Enter the title of the movie you want to change information about")
+            # !! need write this function!!
+            print('Enter the title of the movie you want to change information about')
             title = input('Enter the title: ')
             for item in collection.search_title(title):
                 print(item)
-                x = input("What do you need to update? ")
-                new_val = input("Enter the new value: ")
+                x = input('What do you need to update? ')
+                new_val = input('Enter the new value: ')
                 if x in item:
                     item[x] = new_val
                 print(item)

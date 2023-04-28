@@ -14,7 +14,6 @@ class Collection:
 
     def list_items(self):
         for item in self.items:
-            #print('', end='\n')
             for key, val in item.items():
                 print(f' {key} - {val} |', end=' ')
             print(' ')
