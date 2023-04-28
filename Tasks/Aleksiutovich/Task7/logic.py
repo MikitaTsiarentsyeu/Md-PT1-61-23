@@ -18,8 +18,11 @@ class Collection:
                 print(f' {key} - {val} |', end=' ')
             print(' ')
 
-    #You need write this function
-    def edit_collection(self): pass
+
+    def edit_collection(self, item, key, val):
+        if key in item:
+            item[key] = val
+        self.save_to_file()
 
     def search_title(self, title):
         for item in self.items:
