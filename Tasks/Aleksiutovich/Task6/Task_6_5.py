@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
+import pickle
 from functools import lru_cache
 
 # Write a decorator function that caches the return value of
@@ -14,7 +15,7 @@ def cache_decorator(func):
     global cache
     #cache = {}
     def wrapper(*args, **kwargs):
-        key = str(args) + str(kwargs)
+        key = pickle.dumps(args) + pickle.dumps(args)
         if key in cache:
             return cache[key]
         else:

@@ -36,4 +36,3 @@ Each function should take the search term. The function should yield all matchin
 
 Программа должна использовать генераторы для реализации функциональности поиска.
 В частности, вы должны определить четыре функции генератора: search_title(), search_artist(), search_year() и search_genre().
-Каждая функция

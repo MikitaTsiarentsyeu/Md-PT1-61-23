@@ -1,5 +1,6 @@
 import json
-import pandas as pd
+
+
 class Collection:
     def __init__(self):
         self.items = []
@@ -11,9 +12,13 @@ class Collection:
 
     def list_items(self):
         for item in self.items:
-            print(' ', end='\n')
+            #print('', end='\n')
             for key, val in item.items():
-                print(f'{key} - {val},', end=' ')
+                print(f' {key} - {val} |', end=' ')
+            print(' ')
+
+    #You need write this function
+    def edit_collection(self): pass
 
     def search_title(self, title):
         for item in self.items:
