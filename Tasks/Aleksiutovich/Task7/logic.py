@@ -26,7 +26,7 @@ class Collection:
             if item['title'] == title:
                 yield item
 
-    def director(self, director):
+    def search_director(self, director):
         for item in self.items:
             if item['director'] == director:
                 yield item
