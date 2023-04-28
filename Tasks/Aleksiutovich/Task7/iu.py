@@ -21,12 +21,12 @@ makes it easy to keep track of your favorite films."""
         choice = input('Enter your choice: ')
         if choice == '1':
             title = input('Enter the title: ')
-            artist_director = input('Enter the artist or director: ')
+            director = input('Enter the director: ')
             year = int(input('Enter the year: '))
             genre = input('Enter the genre: ')
             collection.add_item({
                 'title': title,
-                'artist_director': artist_director,
+                'director': director,
                 'year': year,
                 'genre': genre
             })
