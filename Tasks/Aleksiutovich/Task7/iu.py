@@ -55,6 +55,8 @@ makes it easy to keep track of your favorite films."""
                 genre = input('Enter the genre: ')
                 for item in collection.search_genre(genre):
                     print(item)
+            else:
+                print('You have entered an incorrect query')
 
         elif choice == '4':
             print("Enter the title of the movie you want to change information about")
