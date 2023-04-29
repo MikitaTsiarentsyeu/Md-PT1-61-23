@@ -1,8 +1,6 @@
 import json
 
 
-
-
 class Collection:
     def __init__(self):
         self.items = []
@@ -17,7 +15,6 @@ class Collection:
             for key, val in item.items():
                 print(f' {key} - {val} |', end=' ')
             print(' ')
-
 
     def edit_collection(self, item, key, val):
         if key in item:
@@ -56,13 +53,10 @@ class Collection:
             pass
 
 
-
 if __name__ == '__main__':
     col = Collection
     print(type(col))
     import inspect
 
-    c = inspect.getmembers(col, predicate=inspect.ismethod)
-    print(type(c))
 
 

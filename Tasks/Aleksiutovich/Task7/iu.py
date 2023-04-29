@@ -2,7 +2,6 @@ import time
 from logic import Collection
 
 
-
 def main():
     collection = Collection()
     message = """MovieShelf is a movie library program that allows users 
@@ -19,12 +18,12 @@ makes it easy to keep track of your favorite films."""
         print('4. Edit movie entry.')
         print('5. Quit the program.')
         print('6. Help')
-        choice = input('Enter your choice: ')
+        choice = input('Enter your choice: > ')
         if choice == '1':
-            title = input('Enter the title: ')
-            director = input('Enter the director: ')
-            year = int(input('Enter the year: '))
-            genre = input('Enter the genre: ')
+            title = input('Enter the title: > ')
+            director = input('Enter the director: > ')
+            year = int(input('Enter the year: > '))
+            genre = input('Enter the genre: > ')
             collection.add_item({
                 'title': title,
                 'director': director,
@@ -48,24 +47,25 @@ makes it easy to keep track of your favorite films."""
                 for item in collection.search_director(director):
                     print(item)
             elif search_choice == '3':
-                year = int(input('Enter the year: '))
+                year = int(input('Enter the year: > '))
                 for item in collection.search_year(year):
                     print(item)
             elif search_choice == '4':
-                genre = input('Enter the genre: ')
+                genre = input('Enter the genre: > ')
                 for item in collection.search_genre(genre):
                     print(item)
             else:
-                print('You have entered an incorrect query')
+                print('You have entered an incorrect query.')
 
         elif choice == '4':
-            print('Enter the title of the movie you want to change information about')
-            title = input('Enter the title: ')
+            print('Enter the title of the movie you want to change information about.')
+            title = input('Enter the title: > ')
             for item in collection.search_title(title):
                 print(item)
-                key = input('What do you need to update?')
-                new_val = input('Enter the new value: ')
+                key = input('What do you need to update? > ')
+                new_val = input('Enter the new value: > ')
                 collection.edit_collection(item, key, new_val)
+                print('Changes saved successfully')
 
         elif choice == '5':
             break
