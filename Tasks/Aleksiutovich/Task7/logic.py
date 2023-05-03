@@ -4,9 +4,17 @@ import json
 
 class Collection:
     def __init__(self, file_path):
-        self.file_path = file_path
-        self.file_manager = FileManager(self.file_path)
+        self.__file_path = file_path
+        self.file_manager = FileManager(self.__file_path)
         self.items = self.file_manager.read_all_items()
+
+    def get_file_path(self):
+        return self.__file_path
+
+    def set_file_path(self, file):
+        self.__file_path = file
+
+    file_path = property(get_file_path, set_file_path)
 
     def add_item(self, item):
         self.items.append(item)
@@ -44,7 +52,7 @@ class FileManager:
         try:
             with open(self.file_path, 'rb') as f:
                 items = ijson.items(f, 'item')
-                #print(list(items))
+                # print(list(items))
                 return list(items)
         except FileNotFoundError:
             return []
@@ -76,7 +84,7 @@ class Searcher:
 
 
 if __name__ == '__main__':
-    #x = FileManager('df.json')
+    # x = FileManager('df.json')
 
     collection = Collection('df.json')
     collection.add_item({'title': 'The Godfather', 'director': 'Francis Ford Coppola', 'year': 1972, 'genre': 'Crime'})

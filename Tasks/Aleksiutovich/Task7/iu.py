@@ -1,4 +1,5 @@
 import time
+import os
 import logic
 
 
@@ -62,7 +63,8 @@ to easily browse and add movies to their collection. With its
 intuitive interface and powerful search capabilities, MovieShelf 
 makes it easy to keep track of your favorite films."""
     print(message)
-    time.sleep(2)
+    time.sleep(5)
+    os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         print('                  Menu                        ')
         print('1. Add a new album movie to the collection.')
