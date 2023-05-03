@@ -1,6 +1,8 @@
 import json
 from abc import ABC, abstractmethod
-#Этот код написан с помощью ChatGPT4.
+
+
+# Этот код написан с помощью ChatGPT4.
 
 class FilePath(ABC):
     @abstractmethod
@@ -10,6 +12,7 @@ class FilePath(ABC):
     @abstractmethod
     def load(self):
         pass
+
 
 class JsonFilePath(FilePath):
     def __init__(self, path):
@@ -25,6 +28,7 @@ class JsonFilePath(FilePath):
                 return json.load(f)
         except FileNotFoundError:
             return []
+
 
 class Collection:
     def __init__(self, file_path):
