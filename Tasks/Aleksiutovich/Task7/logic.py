@@ -1,6 +1,7 @@
 import ijson
 import json
 # модуль ijson для работы с большими JSON-файлами.
+# Он поможет считывать файл последовательно, экономя память.
 
 
 class Collection:
