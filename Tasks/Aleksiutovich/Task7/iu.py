@@ -5,7 +5,7 @@ import logic
 
 # import logic_b
 
-def add_new_movie(collection):
+def add_new_movie(collection) -> None:
     title = input('Enter the title: > ')
     director = input('Enter the director: > ')
     year = int(input('Enter the year: > '))
@@ -99,4 +99,4 @@ makes it easy to keep track of your favorite films."""
 
 
 if __name__ == '__main__':
-    main()
+# main()

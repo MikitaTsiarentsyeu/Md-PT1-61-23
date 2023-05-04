@@ -18,6 +18,9 @@ class Collection:
 
     file_path = property(get_file_path) #, set_file_path)
 
+    def __str__(self):
+        return f"File collection is {self.file_path}"
+
     def add_item(self, item):
         # метод, который добавляет элемент в коллекцию.
         self.items.append(item)
@@ -80,15 +83,17 @@ class FileManager:
 
 class Searcher:
     def __init__(self, items):
-        self._items = items
+        self.items = items
 
-    def get_items(self):
+    @property
+    def items(self):
         return self._items
 
-    def set_items(self, value):
+    @items.setter
+    def items(self, value):
         self._items = value
 
-    items = property(get_items, set_items)
+    #items = property(get_items, set_items)
 
     def search_by_title(self, title):
         # метод, который ищет элементы по названию.
@@ -112,11 +117,11 @@ class Searcher:
 
 
 if __name__ == '__main__':
-    # x = FileManager('df.json')
-    # test
-    collection = Collection('df.json')
+# test
+    # collection = Collection('df.json')
     # collection.add_item({'title': 'The Godfather', 'director': 'Francis Ford Coppola', 'year': 1972, 'genre': 'Crime'})
-    collection.list_items()
+    # collection.list_items()
     # collection.items
-    result = collection.search_title('The Godfather')
-    print(result)
+    # result = collection.search_title('The Godfather')
+    # print(result)
+
