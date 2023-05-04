@@ -2,7 +2,7 @@ import time
 import os
 import logic
 
-
+# Второй вариант 
 # import logic_b
 
 def add_new_movie(collection) -> None:
