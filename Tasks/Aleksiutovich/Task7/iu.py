@@ -69,7 +69,7 @@ to easily browse and add movies to their collection. With its
 intuitive interface and powerful search capabilities, MovieShelf 
 makes it easy to keep track of your favorite films."""
     print(message)
-    time.sleep(2)
+    time.sleep(3)
     os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         print('                  Menu                        ')
@@ -100,4 +100,4 @@ makes it easy to keep track of your favorite films."""
 
 
 if __name__ == '__main__':
-# main()
+    # main()

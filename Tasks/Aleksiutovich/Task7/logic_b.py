@@ -69,10 +69,10 @@ class Collection:
 
 
 if __name__ == '__main__':
-    collection = Collection('df.json')
-    collection.add_item({'title': 'The Godfather', 'director': 'Francis Ford Coppola', 'year': 1972, 'genre': 'Crime'})
-    collection.list_items()
-    collection.edit_collection(0, 'year', 1974)
-    collection.items
-    result = collection.search_title('The Godfather')
-    print(result)
+    # collection = Collection('df.json')
+    # collection.add_item({'title': 'The Godfather', 'director': 'Francis Ford Coppola', 'year': 1972, 'genre': 'Crime'})
+    # collection.list_items()
+    # collection.edit_collection('The Godfather', 'year', 1974)
+    # collection.items
+    # result = collection.search_title('The Godfather')
+    # print(result)
