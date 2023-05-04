@@ -6,17 +6,20 @@ import json
 
 class Collection:
     def __init__(self, file_path):
-        self.__file_path = file_path
-        self.file_manager = FileManager(self.__file_path)
+        self._file_path = file_path
+        self.file_manager = FileManager(self._file_path)
         self.items = self.file_manager.read_all_items()
 
     def get_file_path(self):
-        return self.__file_path
+        return self._file_path
 
-    # def set_file_path(self, file):
-    #     self.__file_path = file
+    def set_file_path(self, file, force = False):
+        if force:
+            self._file_path = file
+        else:
+            raise AttributeError("can`t set file_path")
 
-    file_path = property(get_file_path) #, set_file_path)
+    file_path = property(get_file_path, set_file_path)
 
     def __str__(self):
         return f"File collection is {self.file_path}"
@@ -55,13 +58,13 @@ class Collection:
 
 class FileManager:
     def __init__(self, file_path):
-        self.file_path = file_path
+        self._file_path = file_path
 
     def get_file_path(self):
-        return self.__file_path
+        return self._file_path
 
     def set_file_path(self, file):
-         self.__file_path = file
+         self._file_path = file
 
     file_path = property(get_file_path, set_file_path)
 
