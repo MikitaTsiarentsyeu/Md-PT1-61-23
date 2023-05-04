@@ -91,7 +91,7 @@ class Searcher:
     items = property(get_items, set_items)
 
     def search_by_title(self, title):
-        #метод, который ищет элементы по названию.
+        # метод, который ищет элементы по названию.
         for item in self.items:
             if item['title'] == title:
                 yield item
@@ -99,15 +99,15 @@ class Searcher:
         # return (item for item in self.items if item['title'] == title)
 
     def search_by_director(self, director):
-        #метод, который ищет элементы по режиссеру.
+        # метод, который ищет элементы по режиссеру.
         return (item for item in self.items if item['director'] == director)
 
     def search_by_year(self, year):
-        #метод, который ищет элементы по году выпуска.
+        # метод, который ищет элементы по году выпуска.
         return (item for item in self.items if item['year'] == year)
 
     def search_by_genre(self, genre):
-        #метод, который ищет элементы по жанру.
+        # метод, который ищет элементы по жанру.
         return (item for item in self.items if item['genre'] == genre)
 
 
@@ -115,8 +115,8 @@ if __name__ == '__main__':
     # x = FileManager('df.json')
     # test
     collection = Collection('df.json')
-    #collection.add_item({'title': 'The Godfather', 'director': 'Francis Ford Coppola', 'year': 1972, 'genre': 'Crime'})
+    # collection.add_item({'title': 'The Godfather', 'director': 'Francis Ford Coppola', 'year': 1972, 'genre': 'Crime'})
     collection.list_items()
-    collection.items
+    # collection.items
     result = collection.search_title('The Godfather')
     print(result)
