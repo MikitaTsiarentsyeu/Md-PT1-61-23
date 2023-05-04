@@ -59,6 +59,7 @@ def edit_movie(collection) -> None:
         collection.edit_collection(item, key, new_val)
         print('Changes saved successfully')
 
+
 def main():
     collection = logic.Collection('df.json')
     # collection = logic_b.Collection('df.json')
