@@ -11,10 +11,10 @@ class Collection:
     def get_file_path(self):
         return self.__file_path
 
-    def set_file_path(self, file):
-        self.__file_path = file
+    # def set_file_path(self, file):
+    #     self.__file_path = file
 
-    file_path = property(get_file_path, set_file_path)
+    file_path = property(get_file_path) #, set_file_path)
 
     def add_item(self, item):
         self.items.append(item)
@@ -22,9 +22,7 @@ class Collection:
 
     def list_items(self):
         for item in self.items:
-            for key, val in item.items():
-                print(f' {key} - {val} |', end=' ')
-            print(' ')
+            print(f"Title: {item['title']}, Director: {item['director']}, Year: {item['year']}, Genre: {item['genre']}")
 
     def edit_collection(self, item_index, key, val):
         if key in item_index:
@@ -48,6 +46,14 @@ class FileManager:
     def __init__(self, file_path):
         self.file_path = file_path
 
+    def get_file_path(self):
+        return self.__file_path
+
+    def set_file_path(self, file):
+         self.__file_path = file
+
+    file_path = property(get_file_path, set_file_path)
+
     def read_all_items(self):
         try:
             with open(self.file_path, 'rb') as f:
@@ -64,7 +70,15 @@ class FileManager:
 
 class Searcher:
     def __init__(self, items):
-        self.items = items
+        self._items = items
+
+    def get_items(self):
+        return self._items
+
+    def set_items(self, value):
+        self._items = value
+
+    items = property(get_items, set_items)
 
     def search_by_title(self, title):
         for item in self.items:
@@ -85,7 +99,7 @@ class Searcher:
 
 if __name__ == '__main__':
     # x = FileManager('df.json')
-
+    # test
     collection = Collection('df.json')
     collection.add_item({'title': 'The Godfather', 'director': 'Francis Ford Coppola', 'year': 1972, 'genre': 'Crime'})
     collection.list_items()
