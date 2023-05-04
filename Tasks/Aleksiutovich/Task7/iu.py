@@ -62,6 +62,7 @@ def edit_movie(collection) -> None:
 
 def main():
     collection = logic.Collection('df.json')
+    # Второй вариант
     # collection = logic_b.Collection('df.json')
     message = """MovieShelf is a movie library program that allows users 
 to easily browse and add movies to their collection. With its 
