@@ -29,6 +29,24 @@
       "artist": "Travis Scott",
       "year": 2018,
       "genre": "hip hop"
+    },
+    {
+      "title": "Future Nostalgia",
+      "artist": "Dua Lipa",
+      "year": 2020,
+      "genre": "pop"
+    },
+    {
+      "title": "Wild East",
+      "artist": "Saluki",
+      "year": 2023,
+      "genre": "rap"
+    },
+    {
+      "title": "beerbongs & bentleys",
+      "artist": "Post Malone",
+      "year": 2018,
+      "genre": "hip hop"
     }
   ]
 }

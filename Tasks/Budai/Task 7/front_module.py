@@ -1,5 +1,32 @@
 import back_module
-from Album import Album
+
+
+def add_album():
+    album = ask_for_album()
+    back_module.AlbumManager.add_album(album)
+
+
+def show_all_albums():
+    albums = back_module.AlbumManager.get_all_albums()
+    for album in albums:
+        print_album(album)
+
+
+def ask_for_album():
+    title = input('Enter the title: ')
+    artist = input('Enter the artist: ')
+    year = input_year('Enter the year: ')
+    genre = input('Enter the genre: ')
+    album = back_module.Album(title, artist, year, genre)
+    return album
+
+
+def print_album(album):
+    print(f"""
+        title - {album['title']}, 
+        artist - {album['artist']}, 
+        year - {album['year']}, 
+        genre - {album['genre']}""")
 
 
 def input_year(message):
@@ -13,34 +40,6 @@ def input_year(message):
                 continue
         except ValueError:
             print('Enter an integer')
-
-
-def print_album(album):
-    print(f"""
-            Title - {album['title']}, 
-            artist - {album['artist']}, 
-            year - {album['year']}, 
-            genre - {album['genre']}""")
-
-
-def add_album():
-    album = ask_for_album()
-    back_module.add_album(album)
-
-
-def show_all_albums():
-    albums = back_module.get_all_albums()
-    for album in albums:
-        print_album(album)
-
-
-def ask_for_album():
-    title = input('Enter the title: ')
-    artist = input('Enter the artist: ')
-    year = input_year('Enter the year: ')
-    genre = input('Enter the genre: ')
-    album = Album(title, artist, year, genre)
-    return album
 
 
 def main_cycle():
@@ -71,19 +70,19 @@ def main_cycle():
                 break
             elif search_option == '1':
                 title = input('Enter the title: ')
-                for album in back_module.search_title(title):
+                for album in back_module.AlbumManager.search_title(title):
                     print_album(album)
             elif search_option == '2':
                 artist = input('Enter the artist: ')
-                for album in back_module.search_artist(artist):
+                for album in back_module.AlbumManager.search_artist(artist):
                     print_album(album)
             elif search_option == '3':
                 year = input_year('Enter the year: ')
-                for album in back_module.search_year(year):
+                for album in back_module.AlbumManager.search_year(year):
                     print_album(album)
             elif search_option == '4':
                 genre = input('Enter the genre: ')
-                for album in back_module.search_genre(genre):
+                for album in back_module.AlbumManager.search_genre(genre):
                     print_album(album)
             else:
                 print('Choose the option from the list')
