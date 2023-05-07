@@ -1,0 +1,3 @@
+import iu
+
+iu.main()
