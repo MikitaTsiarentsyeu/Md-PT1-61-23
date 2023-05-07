@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flexbox Example</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<header>
+		<h1 onmouseover="this.style.color ='red'" onmouseout="this.style.color ='blue'">Flexbox Example</h1>
+	</header>
+	<div class="container">
+		<div class="column">
+			<h2>Column 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel hendrerit nibh, vel dapibus velit. Aliquam sit amet libero dolor. Sed euismod ipsum quis tortor rhoncus, ac imperdiet turpis tempus.</p>
+			<img width="100%" src="psina.jpg" />
+		</div>
+		<div class="column">
+			<h2>Column 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel hendrerit nibh, vel dapibus velit. Aliquam sit amet libero dolor. Sed euismod ipsum quis tortor rhoncus, ac imperdiet turpis tempus.</p>
+			<img width="100%" src="psina.jpg" />
+			<form onsubmit="validate(event)" method="post" action="https://fe.it-academy.by/TestForm.php">
+				<p>Name</p>
+				<p id="name_validation" style="color:red; display: none;">Name cannot be empty</p>
+				<input type="hidden" value="technical value" name="hidden_input">
+				<input type="text" name="name">
+				<p>Date of birth</p>
+				<p id="dob_validation" style="color:red; display: none;">Date of birth cannot be empty</p>
+				<input type="date" name="dob">
+				<input type="submit" value="Send">
+			</form>
+		</div>
+		<div class="column">
+			<h2>Column 3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel hendrerit nibh, vel dapibus velit. Aliquam sit amet libero dolor. Sed euismod ipsum quis tortor rhoncus, ac imperdiet turpis tempus.</p>
+			<img width="100%" src="psina.jpg" />
+		</div>
+	</div>
+	<footer class="footer">
+		<p>&copy; 2023 Flexbox Example</p>
+	</footer>
+</body>
+</html>
