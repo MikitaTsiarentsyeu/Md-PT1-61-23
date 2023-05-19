@@ -1,0 +1,40 @@
+{
+  "albums": [
+    {
+        "title": "beerbongs & bentleys",
+        "artist": "Post Malone",
+        "year": 2018,
+        "genre": "hip hop"
+    },
+    {
+      "title": "Memento Mori",
+      "artist": "Depeche Mode",
+      "year": 2023,
+      "genre": "Alternative rock"
+    },
+    {
+      "title": "72 Seasons",
+      "artist": " Metallica",
+      "year": 2023,
+      "genre": "Heavy metal"
+    },
+    {
+        "title": "Philarmonia",
+        "artist": "Pharaoh",
+        "year": 2022,
+        "genre": "rap"
+    },
+    {
+      "title": "Mainstream Sellout",
+      "artist": "Machine Gun Kelly",
+      "year": 2022,
+      "genre": "pop punk"
+    },
+    {
+      "title": "Astroworld",
+      "artist": "Travis Scott",
+      "year": 2018,
+      "genre": "hip hop"
+    }
+  ]
+}
