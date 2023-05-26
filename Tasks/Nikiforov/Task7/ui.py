@@ -1,23 +1,18 @@
 import logic 
 
 def add_movie(): 
-    movie = []
     while True:
         while True:
-            title = input("Enter the title of movie:\n")
+            title = input("Enter the title of movie:\n").title().strip()
             if len(title) == 0:
                 print("This field is required and cannot be empty, try again")
                 continue
-            else:
-                movie.append(title.title().strip())
             break
         while True:
-            director = input("Enter the director of movie:\n")
+            director = input("Enter the director of movie:\n").title().strip()
             if len(director) == 0:
                 print("This field is required and cannot be empty, try again")
                 continue
-            else:
-                movie.append(director.title().strip())
             break
         while True:
             year = input("Enter the year the movie was released:\n").strip()
@@ -29,26 +24,22 @@ def add_movie():
                 elif year > 2023:
                     print("It's great that you can see the future, but let's talk about already existing movies")
                     continue
-                else:
-                    movie.append(str(year))
             else:
                 print("This field can only contain numbers, try again")
                 continue
             break
         while True:
-            genre = input("Enter the genre of the movie:\n")
+            genre = input("Enter the genre of the movie:\n").lower()
             if len(genre) == 0:
                 print("This field is required and cannot be empty, try again")
                 continue
-            else:
-                movie.append(genre.lower())
             break
         break
-    logic.file_write(movie)
-    print("The movie was added succesfully!")
+    print(logic.MovieManager.add_movie(title,director,year,genre))
+    
 
 def get_all():
-    print("All movies in the collection:\n\n" + '\n'.join([f"{movie[0]}: {movie[2]} {movie[3].rstrip()} film directed by {movie[1]}" for movie in logic.list_collection()]))
+    print("All movies in the collection:\n\n" + '\n'.join([f"{movie[0]}: {movie[2]} {movie[3].rstrip()} film directed by {movie[1]}" for movie in logic.MovieDB.get_all()]))
 
 def search_film():
     search_method = input("""
@@ -59,19 +50,25 @@ def search_film():
             5. Quit
             """)
     if search_method == '1':
-        for i in logic.search_title():
-            print(i)
+        title = input("Enter the title of the movie:\n").title().strip()
+        print(logic.MovieManager.search_title(title))
     elif search_method == '2':
-        for i in logic.search_director():
+        director = input("Enter the director of the movie:\n").title().strip()
+        for i in logic.MovieManager.search_director(director):
             print(i)
     elif search_method == '3':
-        for i in logic.search_year():
+        year = input("Enter the year the movie was released:\n").strip()
+        for i in logic.MovieManager.search_year(year):
             print(i)
     elif search_method == '4':
-        for i in logic.search_genre():
+        genre = input("Enter the genre of the movie:\n").lower()
+        for i in logic.MovieManager.search_genre(genre):
             print(i)
+    elif search_method == '5':
+        main_cycle()
     else:
-        pass
+        print("Choose a number from the list")
+        search_film()
 
     
 
