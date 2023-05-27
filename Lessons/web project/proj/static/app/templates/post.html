@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Example</title>
+    <link rel="stylesheet" href="{% static "app/css/style.css" %}">
+</head>
+<body>
+	<header>
+		<a href="{% url 'posts' %}"><h1>Awesome blog</h1></a>
+	</header>
+	<div class="container">
+		<div class="column">
+            <div>
+                <h1>{{post.title}}</h1>
+                <p>by {{post.author.name}}</p>
+                {% if post.image %}
+                    <img class="image" src={{post.image.url}}>
+                {% endif %}
+                <p>{{post.content}}</p>
+            </div>
+		</div>
+	</div>
+	<footer class="footer">
+		<p>&copy; 2023 Django Example</p>
+	</footer>
+</body>
+</html>

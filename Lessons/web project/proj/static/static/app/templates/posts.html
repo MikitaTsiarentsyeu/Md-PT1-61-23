@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Django Example</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		header, footer {
+			height: 50px;
+			background-color: #333;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.footer {
+			    position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin: 0 auto;
+			max-width: 960px;
+			padding: 20px;
+		}
+		.column {
+			flex-basis: calc(70% - 20px);
+			background-color: #f2f2f2;
+			margin-bottom: 20px;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		.image {
+			max-width: 100%;
+		}
+		.column:last-child {
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<a href="{% url 'posts' %}"><h1>Django Example</h1></a>
+	</header>
+	<div class="container">
+		<div class="column">
+			{% for post in posts %}
+                <div>
+                    <a href="{% url 'post' post.id %}">
+                        <h2>{{post.title}}</h2>
+                    </a>
+                    {% if post.image %}
+                        <img class="image" src={{post.image.url}}>
+                    {% endif %}
+                </div>
+            {% endfor %}
+		</div>
+	</div>
+	<footer class="footer">
+		<p>&copy; 2023 Django Example</p>
+	</footer>
+</body>
+</html>

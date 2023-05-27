@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div>
+        <h1>{{post.title}}</h1>
+        <p>by {{post.author.name}}</p>
+        {% if post.image %}
+            <img class="image" src={{post.image.url}}>
+        {% endif %}
+        <p>{{post.content}}</p>
+    </div>
+{% endblock %}
