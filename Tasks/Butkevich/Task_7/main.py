@@ -1,0 +1,3 @@
+from task_7_user_interface import my_super_programm
+
+my_super_programm()
