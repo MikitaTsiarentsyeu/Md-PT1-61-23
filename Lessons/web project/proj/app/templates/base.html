@@ -9,6 +9,19 @@
 <body>
 	<header>
 		<a href="{% url 'posts' %}"><h1>Awesome blog</h1></a>
+        <p style="padding-left: 5%;"> Hello, 
+            {% if user.is_authenticated %}
+                {{user.get_username}}!
+                {% if perms.app.add_post %}
+                    <a href='{% url 'add' %}'>new post</a>
+                {% endif %}
+                <a href='{% url 'logout' %}?next={{request.path}}'>logout</a>
+
+            {% else %}
+                dear user!
+                <a href='{% url 'login' %}?next={{request.path}}'>login</a>
+            {% endif %}
+        </p>
 	</header>
 	<div class="container">
 		<div class="column">
