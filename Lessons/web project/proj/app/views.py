@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 import django.http
 from .models import Post, Author
 from .forms import AddPost
+from django.contrib.auth.decorators import permission_required
 
 import datetime
 
@@ -17,17 +18,27 @@ def test_view(request, param):
 
 def posts(request):
     posts = Post.objects.all()
-    return render(request, 'posts.html', {'posts':posts})
+    viewed = request.session.get('viewed', [])
+    context = {}
+    context['posts'] = posts
+    context['viewed'] = viewed
+    print(viewed)
+    return render(request, 'posts.html', context)
 
 def post(request, post_id):
     try:
         p = Post.objects.get(id=post_id)
+        viewed = request.session.get('viewed', [])
+        if p.id not in viewed:
+            viewed.append(p.id)
+            request.session['viewed'] = viewed
         context = {}
         context['post'] = p
         return render(request, 'post.html', context)
     except:
         return django.http.HttpResponseNotFound("not found")
 
+@permission_required("app.add_post")
 def add_post(request):
     if request.method == "POST":
         form = AddPost(request.POST, request.FILES)

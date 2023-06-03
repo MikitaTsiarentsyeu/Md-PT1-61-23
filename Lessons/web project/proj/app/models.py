@@ -20,5 +20,8 @@ class Post(models.Model):
 
     author = models.ForeignKey('Author', on_delete=models.CASCADE)
 
+    # def __str__(self) -> str:
+    #     return self.title
+
     def __str__(self) -> str:
-        return self.title
+        return f"{self.title}_{self.post_type}"
