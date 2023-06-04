@@ -18,13 +18,14 @@ from django.urls import include, path
 from app import views as app_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.decorators import permission_required
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("home/", app_views.home),
-    path("posts/", app_views.posts, name='posts'),
-    path("posts/<int:post_id>", app_views.post, name='post'),
-    path("posts/add/", app_views.add_post, name="add"),
+    # path("home/", app_views.home),
+    path("posts/", app_views.PostsView.as_view(), name='posts'),
+    path("posts/<int:post_id>", app_views.PostView.as_view(), name='post'),
+    path("posts/add/", permission_required("app.add_post")(app_views.AddPosView.as_view()), name="add"),
 ]
 
 urlpatterns += [path('accounts/', include('django.contrib.auth.urls')),
