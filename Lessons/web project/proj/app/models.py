@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework import serializers, viewsets
 
 class Author(models.Model):
 
@@ -25,3 +26,12 @@ class Post(models.Model):
 
     def __str__(self) -> str:
         return f"{self.title}_{self.post_type}"
+    
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['id', 'title', 'content', 'issued', 'author']
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer

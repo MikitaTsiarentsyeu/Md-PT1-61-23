@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from app import views as app_views
+from app import models as app_models
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import permission_required
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('post', app_models.PostViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +31,7 @@ urlpatterns = [
     path("posts/", app_views.PostsView.as_view(), name='posts'),
     path("posts/<int:post_id>", app_views.PostView.as_view(), name='post'),
     path("posts/add/", permission_required("app.add_post")(app_views.AddPosView.as_view()), name="add"),
+    path("api/", include(router.urls))
 ]
 
 urlpatterns += [path('accounts/', include('django.contrib.auth.urls')),
