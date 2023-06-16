@@ -1,3 +1,3 @@
-from task_7_user_interface import my_super_programm
+import task_7_version_2_front
 
-my_super_programm()
+task_7_version_2_front.my_super_programm()
